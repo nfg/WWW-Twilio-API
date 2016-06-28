@@ -124,6 +124,8 @@ sub DESTROY {
     delete $account_sid {$self};
     delete $auth_token  {$self};
     delete $api_version {$self};
+    delete $lwp_callback{$self};
+    delete $utf8        {$self};
 
     my $super = $self->can("SUPER::DESTROY");
     goto &$super if $super;
